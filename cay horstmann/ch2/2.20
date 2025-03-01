@@ -1,0 +1,26 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int time1, time2, hours1, hours2, hours3, minutes1, minutes2, minutes3, diff;
+	cout << "please enter the first time: ";
+	cin >> time1;
+	cout << "please enter the second time: ";
+	cin >> time2;
+
+	hours1 = time1 / 100;
+	hours2 = time2 / 100;
+	minutes1 = (time1 % 100) + (hours1 * 60);
+	minutes2 = (time2 % 100) + (hours2 * 60);
+	if (minutes2 > minutes1) {
+		diff = (minutes2 - minutes1);
+	}
+	else {
+		diff = (minutes2+1440) - minutes1;
+	}
+	hours3 = diff / 60;
+	minutes3 = diff % 60;
+	cout << "the difference between the two times is: " << hours3 << " hours and " << minutes3 << " minutes" << endl;
+	return 0;
